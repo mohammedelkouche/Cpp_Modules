@@ -1,6 +1,8 @@
 NAME = megaphone
 
-SRC = megaphone.cpp
+SRC = Phonebook.cpp main.cpp Contact.cpp
+
+HEADER = Contact.hpp Phonebook.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -13,7 +15,7 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 		$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
