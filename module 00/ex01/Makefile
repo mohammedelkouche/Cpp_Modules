@@ -1,8 +1,8 @@
-NAME = megaphone
+NAME = phone
 
-SRC = Phonebook.cpp main.cpp Contact.cpp
+SRC = PhoneBook.cpp main.cpp Contact.cpp
 
-HEADER = Contact.hpp Phonebook.hpp
+HEADER = Contact.hpp PhoneBook.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class CONTACT_HPP
+class Contact
 {
 	private	:
 		std::string FirstName;
@@ -12,7 +12,7 @@ class CONTACT_HPP
 		std::string PhoneNum;
 		std::string DarkSecret;
 	public	:
-		void	setFistName(std::string name);
+		void	setFistName(std::string fname);
 		void	setLastName(std::string Lname);
 		void	setNickName(std::string Nkname);
 		void	setPhoneNum(std::string Number);

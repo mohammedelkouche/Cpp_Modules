@@ -5,14 +5,14 @@
 #include <string>
 #include "Contact.hpp"
 
-class PHONEBOOK
+class PhoneBook
 {
 	private	:
 		Contact list[8];
 		int	index;
 
 	public	:
-		PhoneBook();
+		// PhoneBook();
 		void	Add_contact();
 		void	Search_contact();
 		void	Exit_contact();
