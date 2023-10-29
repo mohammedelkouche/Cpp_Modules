@@ -14,7 +14,9 @@ int main()
         std::string command;
         // program_guide();
         std::cout << "PhonBook > ";
-        std::getline(std::cin, command);
+        // std::getline(std::cin, command);
+        if (!std::getline(std::cin, command))
+            exit(1);
         if (command == "ADD")
             book.Add_contact();
         // else if (command == "SEARCH")

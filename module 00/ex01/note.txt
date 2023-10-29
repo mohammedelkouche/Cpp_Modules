@@ -3,3 +3,25 @@ like :
 if (is_valid_number(data[3]))
 	break;
 std::cout << "Please input a valid number" << std::endl;
+/-------------------------/
+Initializer List
+	count()
+	{ count = 0; }
+	However, this is not the preferred approach (although it does work). Here’s how you should
+	initialize a data member:
+	count() : count(0)
+	{ }
+/--------------------------/
+if (!std::getline(std::cin, Fname))
+	This condition uses the logical NOT
+ 	(!) operator to check the opposite 
+ 	of the return value of std::getline.
+	It checks if std::getline was unsuccessful,
+	meaning it failed to read a line of input or
+	encountered an error.
+if (std::getline(std::cin, Fname))
+	This condition checks whether 
+	std::getline was successful in reading 
+	a line of input. If std::getline successfully
+	reads a line from std::cin, it returns true,
+	indicating that input was received.
