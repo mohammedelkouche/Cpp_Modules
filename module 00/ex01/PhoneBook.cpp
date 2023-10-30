@@ -18,6 +18,7 @@ void	PhoneBook::Add_contact()
 			error_message();
 	} while (Fname.empty());
 	contact.setFistName(Fname);
+	// std::cout << contact.getFirstName() << std::endl;
 	do{
 		std::cout << "Entre the Last Name : ";
 		if (!std::getline(std::cin, Lname))
@@ -53,3 +54,8 @@ void	PhoneBook::Add_contact()
 	} while (Secret.empty());
 	contact.setDarkSecret(Secret);
 }
+
+// void	PhoneBook::Search_contact()
+// {
+
+// }

@@ -20,3 +20,24 @@ void	Contact::setDarkSecret(std::string Secret)
 {
 	DarkSecret = Secret;
 }
+
+std::string	Contact::getFirstName()
+{
+	return FirstName;
+}
+std::string	Contact::getLastName()
+{
+	return LastName;
+}
+std::string	Contact::getNickName()
+{
+	return NickName;
+}
+std::string	Contact::getPhoneNum()
+{
+	return PhoneNum;
+}
+std::string	Contact::getDarkSecret()
+{
+	return DarkSecret;
+}
