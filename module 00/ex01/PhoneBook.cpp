@@ -6,10 +6,15 @@ void	error_message()
 	std::cout << "this field can't be empty" << std::endl;
 }
 
+//initialization list
+PhoneBook::PhoneBook():index(0)
+{}
+
 void	PhoneBook::Add_contact()
 {
-	Contact contact;
+	Contact newcontact;
 	std::string Fname, Lname, Nkname, Number, Secret;
+
 	do{
 		std::cout << "Entre the First Name : ";
 		if (!std::getline(std::cin, Fname))
@@ -17,8 +22,8 @@ void	PhoneBook::Add_contact()
 		if (Fname.empty())
 			error_message();
 	} while (Fname.empty());
-	contact.setFistName(Fname);
-	// std::cout << contact.getFirstName() << std::endl;
+	newcontact.setFistName(Fname);
+	// std::cout << newcontact.getFirstName() << std::endl;
 	do{
 		std::cout << "Entre the Last Name : ";
 		if (!std::getline(std::cin, Lname))
@@ -26,8 +31,7 @@ void	PhoneBook::Add_contact()
 		if (Lname.empty())
 			error_message();
 	} while (Lname.empty());
-	contact.setLastName(Lname);
-
+	newcontact.setLastName(Lname);
 	do{
 		std::cout << "Entre the NickName : ";
 		if (!std::getline(std::cin, Nkname))
@@ -35,8 +39,7 @@ void	PhoneBook::Add_contact()
 		if (Nkname.empty())
 			error_message();
 	} while (Nkname.empty());
-	contact.setNickName(Nkname);
-
+	newcontact.setNickName(Nkname);
 	do{
 		std::cout << "Entre the PhoneNum : ";
 		if (!std::getline(std::cin, Number))
@@ -44,7 +47,7 @@ void	PhoneBook::Add_contact()
 		if (Number.empty())
 			error_message();
 	} while (Number.empty());
-	contact.setPhoneNum(Number);
+	newcontact.setPhoneNum(Number);
 	do{
 		std::cout << "Entre the DarkSecret : ";
 		if (!std::getline(std::cin, Secret))
@@ -52,7 +55,11 @@ void	PhoneBook::Add_contact()
 		if (Secret.empty())
 			error_message();
 	} while (Secret.empty());
-	contact.setDarkSecret(Secret);
+	newcontact.setDarkSecret(Secret);
+	if(index == 7)
+		index = 0;
+	list[index % 8] = newcontact;
+	index++;
 }
 
 // void	PhoneBook::Search_contact()

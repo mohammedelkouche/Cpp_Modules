@@ -12,7 +12,7 @@ class PhoneBook
 		int	index;
 
 	public	:
-		// PhoneBook();
+		PhoneBook();
 		void	Add_contact();
 		void	Search_contact();
 		void	Exit_contact();
