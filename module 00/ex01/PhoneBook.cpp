@@ -1,4 +1,16 @@
-#include "phonebook.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/13 20:33:42 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/11/13 20:33:42 by mel-kouc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PhoneBook.hpp"
 #include "Contact.hpp"
 
 void	error_message()
@@ -6,7 +18,7 @@ void	error_message()
 	std::cout << "this field can't be empty" << std::endl;
 }
 
-//initialization list
+//initializatlion ist
 PhoneBook::PhoneBook():index(0)
 {}
 
@@ -23,7 +35,6 @@ void	PhoneBook::Add_contact()
 			error_message();
 	} while (Fname.empty());
 	newcontact.setFistName(Fname);
-	// std::cout << newcontact.getFirstName() << std::endl;
 	do{
 		std::cout << "Entre the Last Name : ";
 		if (!std::getline(std::cin, Lname))
@@ -56,7 +67,7 @@ void	PhoneBook::Add_contact()
 			error_message();
 	} while (Secret.empty());
 	newcontact.setDarkSecret(Secret);
-	if(index == 7)
+	if(index == 8)
 		index = 0;
 	list[index % 8] = newcontact;
 	index++;
@@ -64,5 +75,5 @@ void	PhoneBook::Add_contact()
 
 // void	PhoneBook::Search_contact()
 // {
-
+	
 // }

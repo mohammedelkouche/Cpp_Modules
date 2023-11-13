@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/13 20:32:50 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/11/13 20:32:50 by mel-kouc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -16,14 +28,11 @@ int main()
 		std::string command;
 		// program_guide();
 		std::cout << "PhonBook > ";
-		// std::getline(std::cin, command);
+		std::getline(std::cin, command);
 		if (!std::getline(std::cin, command))
 			exit(1);
 		if (command == "ADD")
 			book.Add_contact();
-		// std::cout << info.getFirstName() << std::endl;
-		// std::cout << "test" << std::endl;
-		// 	std::cout << info.getFirstName();
 		// else if (command == "SEARCH")
 		//     book.Search_contact();
 		// else if (command == "EXIT")
