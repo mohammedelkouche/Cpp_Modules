@@ -18,8 +18,10 @@ void	error_message()
 	std::cout << "this field can't be empty" << std::endl;
 }
 
-//initializatlion ist
-PhoneBook::PhoneBook():index(0)
+//initializatlion list
+PhoneBook::PhoneBook():index(0) ,nb_cnt(0)
+{}
+PhoneBook::~PhoneBook()
 {}
 
 void	PhoneBook::Add_contact()
@@ -68,12 +70,70 @@ void	PhoneBook::Add_contact()
 	} while (Secret.empty());
 	newcontact.setDarkSecret(Secret);
 	if(index == 8)
-		index = 0;
+	{
+		nb_cnt = 7;
+		// index = 0;
+	}
+	// if (index != 0)
+	// 	nb_cnt = index;
 	list[index % 8] = newcontact;
 	index++;
 }
 
-// void	PhoneBook::Search_contact()
-// {
-	
-// }
+std::string	truncated(std::string word)
+{
+	std::string	str;
+
+	if (word.length() > 9)
+	{
+		str = word.substr(0, 9) + ".";
+		return (str);
+	}
+	return (word);
+}
+
+void	PhoneBook::Search_contact()
+{
+	int	id = 0;
+	int number;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << '|' << std::setw(10) << "id" 
+			<< '|' << std::setw(10) << "FirstName" 
+			<< '|' << std::setw(10) << "LastName" 
+			<< '|' << std::setw(10) << "NickName" 
+			<< '|' << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+
+	// if (nb_cnt == 7)
+	// 	number = nb_cnt;
+	// else
+	// 	number = index;
+	// while (id <= number)
+	while (id < 8 && !list[id].getFirstName().empty())
+	{
+		std::cout << '|' << std::setw(10) << id << '|';
+		std::cout << std::setw(10) << truncated(list[id].getFirstName())  << '|';
+		std::cout << std::setw(10) << truncated(list[id].getLastName()) << '|';
+		std::cout << std::setw(10) << truncated(list[id].getNickName()) << '|' << std::endl;
+		std::cout << "---------------------------------------------" << std::endl;
+		id++;
+	}
+	std::string identity;
+	std::cout << "choise the index of the entry to display : " ;
+	if (!std::getline(std::cin, identity))
+		exit(1);
+	// 1) check if identity is number 2 ) convert if to int using atoi 
+	number = std::atoi(identity.c_str());
+	std::cout << number << std::endl;
+	if (number >= 0 && number <= index)
+	{
+		std::cout << "FirstName : " << list[number].getFirstName() << std::endl;
+		std::cout << "LastName : " << list[number].getLastName() << std::endl;
+		std::cout << "NickName : " << list[number].getNickName() << std::endl;
+		std::cout << "PhoneNum : " << list[number].getPhoneNum() << std::endl;
+		std::cout << "DarkSecret : " << list[number].getDarkSecret() << std::endl;
+	}
+	else
+		std::cout << "the index is out of range " << std::endl;
+
+}

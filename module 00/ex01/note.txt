@@ -25,3 +25,11 @@ if (std::getline(std::cin, Fname))
 	a line of input. If std::getline successfully
 	reads a line from std::cin, it returns true,
 	indicating that input was received.
+
+
+
+
+	QUESTION :
+	differnce betwwen endl and /n  ->   endl : flqsh the buffer
+
+	cout

@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -22,9 +23,11 @@ class PhoneBook
 	private	:
 		Contact list[8];
 		int	index;
+		int	nb_cnt;
 
 	public	:
 		PhoneBook();
+		~PhoneBook();
 		void	Add_contact();
 		void	Search_contact();
 		void	Exit_contact();
