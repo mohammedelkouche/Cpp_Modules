@@ -4,6 +4,7 @@ int main(int argc, char **argv)
 {
     int i;
     int j;
+    std::string data;
 
     i = 1;
     if (argc == 1)
@@ -13,12 +14,13 @@ int main(int argc, char **argv)
         while (argv[i])
         {
             j = 0;
-            while (argv[i][j])
+            data = argv[i];
+            while (data[j])
             {
-                if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
-                    std::cout << (char)(argv[i][j] - 32);
+                if (data[j] >= 'a' && data[j] <= 'z')
+                    std::cout << (char)toupper(data[j]);
                 else
-                    std::cout << argv[i][j];
+                    std::cout << data[j];
                 j++;
             }
             i++;

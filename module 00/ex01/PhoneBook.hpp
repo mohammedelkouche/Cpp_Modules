@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cctype>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -23,7 +24,6 @@ class PhoneBook
 	private	:
 		Contact list[8];
 		int	index;
-		int	nb_cnt;
 
 	public	:
 		PhoneBook();

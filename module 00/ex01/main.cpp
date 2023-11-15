@@ -13,10 +13,14 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-// void    program_guide(void)
-// {
-
-// }
+void    program_guide(void)
+{
+	std::cout << std::endl << "|-------------------- POHNEBOOK  COMMAND ---------------------------|" << std::endl;
+	std::cout << "|---------------  " << "ADD : ADD A NEW CONTACT " << "               -----------|" << std::endl;
+	std::cout << "|---------------  " << "SEARCH : DISPLAY A SPECIFIC CONTACT " << "   -----------|" << std::endl;
+	std::cout << "|---------------  " << "EXIT : EXIT FROME PROGRAMME " << "           -----------|" << std::endl;
+	std::cout << "|-------------------------------------------------------------------|" << std::endl;
+}
 
 int main()
 {
@@ -26,17 +30,18 @@ int main()
 	while (1337)
 	{
 		std::string command;
-		// program_guide();
+		program_guide();
 		std::cout << "PhonBook > ";
-		// std::getline(std::cin, command);
 		if (!std::getline(std::cin, command))
 			exit(1);
 		if (command == "ADD")
 			book.Add_contact();
 		else if (command == "SEARCH")
 		    book.Search_contact();
-		// else if (command == "EXIT")
-		//     book.Exit_contact();
+		else if (command == "EXIT")
+		    book.Exit_contact();
+		else
+			std::cout << "the command is not found" << std::endl;
 
 	}
 }

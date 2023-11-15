@@ -18,11 +18,24 @@ void	error_message()
 	std::cout << "this field can't be empty" << std::endl;
 }
 
-//initializatlion list
-PhoneBook::PhoneBook():index(0) ,nb_cnt(0)
+PhoneBook::PhoneBook():index(0)
 {}
 PhoneBook::~PhoneBook()
 {}
+
+int whitespace(std::string str)
+{
+	int i;
+	i = 0;
+
+	while (str[i])
+	{
+		if (std::isspace(str[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 void	PhoneBook::Add_contact()
 {
@@ -35,7 +48,7 @@ void	PhoneBook::Add_contact()
 			exit(1);
 		if (Fname.empty())
 			error_message();
-	} while (Fname.empty());
+	} while (Fname.empty() || whitespace(Fname));
 	newcontact.setFistName(Fname);
 	do{
 		std::cout << "Entre the Last Name : ";
@@ -43,7 +56,7 @@ void	PhoneBook::Add_contact()
 			exit(1);
 		if (Lname.empty())
 			error_message();
-	} while (Lname.empty());
+	} while (Lname.empty() || whitespace(Lname));
 	newcontact.setLastName(Lname);
 	do{
 		std::cout << "Entre the NickName : ";
@@ -51,7 +64,7 @@ void	PhoneBook::Add_contact()
 			exit(1);
 		if (Nkname.empty())
 			error_message();
-	} while (Nkname.empty());
+	} while (Nkname.empty() || whitespace(Nkname));
 	newcontact.setNickName(Nkname);
 	do{
 		std::cout << "Entre the PhoneNum : ";
@@ -59,7 +72,7 @@ void	PhoneBook::Add_contact()
 			exit(1);
 		if (Number.empty())
 			error_message();
-	} while (Number.empty());
+	} while (Number.empty() || whitespace(Number));
 	newcontact.setPhoneNum(Number);
 	do{
 		std::cout << "Entre the DarkSecret : ";
@@ -67,15 +80,8 @@ void	PhoneBook::Add_contact()
 			exit(1);
 		if (Secret.empty())
 			error_message();
-	} while (Secret.empty());
+	} while (Secret.empty() || whitespace(Secret));
 	newcontact.setDarkSecret(Secret);
-	if(index == 8)
-	{
-		nb_cnt = 7;
-		// index = 0;
-	}
-	// if (index != 0)
-	// 	nb_cnt = index;
 	list[index % 8] = newcontact;
 	index++;
 }
@@ -92,6 +98,16 @@ std::string	truncated(std::string word)
 	return (word);
 }
 
+int	check_num(std::string str)
+{
+	int	num;
+
+	if (str.length() > 1 || !isdigit(str[0]))
+		return(-1);
+	num = std::atoi(str.c_str());
+	return(num);
+}
+
 void	PhoneBook::Search_contact()
 {
 	int	id = 0;
@@ -103,12 +119,6 @@ void	PhoneBook::Search_contact()
 			<< '|' << std::setw(10) << "NickName" 
 			<< '|' << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-
-	// if (nb_cnt == 7)
-	// 	number = nb_cnt;
-	// else
-	// 	number = index;
-	// while (id <= number)
 	while (id < 8 && !list[id].getFirstName().empty())
 	{
 		std::cout << '|' << std::setw(10) << id << '|';
@@ -122,10 +132,8 @@ void	PhoneBook::Search_contact()
 	std::cout << "choise the index of the entry to display : " ;
 	if (!std::getline(std::cin, identity))
 		exit(1);
-	// 1) check if identity is number 2 ) convert if to int using atoi 
-	number = std::atoi(identity.c_str());
-	std::cout << number << std::endl;
-	if (number >= 0 && number <= index)
+	number = check_num(identity);
+	if (number >= 0 && number < index && number <=7)
 	{
 		std::cout << "FirstName : " << list[number].getFirstName() << std::endl;
 		std::cout << "LastName : " << list[number].getLastName() << std::endl;
@@ -134,6 +142,11 @@ void	PhoneBook::Search_contact()
 		std::cout << "DarkSecret : " << list[number].getDarkSecret() << std::endl;
 	}
 	else
-		std::cout << "the index is out of range " << std::endl;
+		std::cout << "the index is out of range or wrong" << std::endl;
+}
 
+void	PhoneBook::Exit_contact()
+{
+	std::cout << "exit from PhoneBook program" << std::endl;
+	exit(0);
 }

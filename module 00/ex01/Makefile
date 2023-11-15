@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phone
+NAME = phonebook
 
 SRC = PhoneBook.cpp main.cpp Contact.cpp
 
@@ -18,7 +18,7 @@ HEADER = Contact.hpp PhoneBook.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CFLAGS = -Wall -Wextra -Werror  -fsanitize=address -std=c++98
+CFLAGS = -Wall -Wextra -Werror
 
 CC = c++
 
