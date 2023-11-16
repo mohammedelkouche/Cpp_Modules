@@ -1,6 +1,20 @@
-NAME = megaphone
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/16 23:19:39 by mel-kouc          #+#    #+#              #
+#    Updated: 2023/11/16 23:19:39 by mel-kouc         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRC = megaphone.cpp
+NAME = output
+
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+
+HEADER = Zombie.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -13,7 +27,7 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
