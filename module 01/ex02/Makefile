@@ -12,9 +12,8 @@
 
 NAME = output
 
-SRC = main.cpp zombieHorde.cpp  Zombie.cpp
+SRC = main.cpp
 
-HEADER = Zombie.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -27,7 +26,7 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp $(HEADER)
+%.o : %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :

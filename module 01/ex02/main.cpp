@@ -5,23 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 23:48:55 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/17 11:47:30 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/11/17 12:07:07 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/11/17 12:30:16 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
 int main()
 {
-    int N = 6;
-    int i = 0;
-    Zombie *arr = zombieHorde(N, "1337");
-    while (i < N)
-    {
-        arr->announce();
-        i++;
-    }
-    delete []arr;
+    
     return (0);
 }
