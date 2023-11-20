@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 00:54:24 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/20 00:57:52 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/11/20 10:41:49 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/11/20 11:12:01 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int main(int argc, char **argv)
         std::cout << "enter one argument"<< std::endl;
         return (1);
     }
-    hatl.complain(argv[1]);
+    harl.complain(argv[1]);
     return (0);
 }
