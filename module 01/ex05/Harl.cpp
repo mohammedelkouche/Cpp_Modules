@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    Harl.cpp                                          :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/19 17:26:40 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/19 23:51:01 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/11/20 10:41:45 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/11/20 11:35:08 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void    Harl::complain( std::string level)
 {
     std::string arr[4] = {"debug","info","warning","error"};
     
-    void    Harl::*ptr_fct[4](void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    void    (Harl::*ptr_fct[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     int i = 0;
     while(i < 4)
     {
-        if (std::string arr[i] == level)
-            this->*ptr_fct[i]();
+        if (arr[i] == level)
+            (this->*ptr_fct[i])();
         i++;
     }
 }
