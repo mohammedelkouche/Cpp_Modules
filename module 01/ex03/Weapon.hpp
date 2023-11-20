@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:11:15 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/17 21:31:16 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:56:24 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   Weapon
 	private	:
 		std::string type;
 	public	:
-		Weapon();
+		Weapon(std::string type);
 		~Weapon();
 		std::string const	&getType();
 		void	setType(std::string type);

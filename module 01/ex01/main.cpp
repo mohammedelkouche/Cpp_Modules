@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 23:48:55 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/17 11:47:30 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/18 17:58:55 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int main()
 {
-    int N = 6;
+    int N = 5;
     int i = 0;
     Zombie *arr = zombieHorde(N, "1337");
+    if (arr == NULL)
+        return (0);
     while (i < N)
     {
         arr->announce();

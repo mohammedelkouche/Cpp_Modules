@@ -6,12 +6,23 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 17:50:30 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/19 01:34:34 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/19 16:56:57 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+
+void    replase_str(std::string &line, const std::string &s1, const std::string &s2)
+{
+    size_t start = 0;
+    while ((start = line.find(s1, start)) != std::string::npos)
+    {
+        line.erase(start, s1.length());
+        line.insert(start, s2);
+        start = start + s2.length();
+    }
+}
 
 int main(int ac, char **argv)
 {
@@ -34,23 +45,28 @@ int main(int ac, char **argv)
         std::cout << "Error opening file: " << filename << std::endl;
         return (1);
     }
+    infile.seekg(0, std::ios::end);
+    if (infile.tellg() == 0)
+    {
+        std::cout << "Error: File is empty." << std::endl;
+        infile.close();
+        return (1);
+    }
+    infile.seekg(0, std::ios::beg); // Reset the file position to the beginning
     std::ofstream outfile(filename + ".replace");
     if (!outfile.is_open())
     {
         std::cerr << "Error opening file: " << filename << ".replace" << std::endl;
+        infile.close();
         return (1);
     }
     while (getline(infile, line))
     {
-        size_t start = 0;
-        while (start == line.find(s1, start))
-        {
-            line.erase(start, s1.length());
-            line.insert(start, s2);
-            start = start + s2.length();
-        }
+        replase_str(line, s1, s2);
         // Write the modified line to the output file
         outfile << line << std::endl;
     }
+    infile.close();
+    outfile.close();
     return (0);
 }

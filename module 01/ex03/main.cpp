@@ -6,9 +6,14 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:09:04 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/17 23:16:14 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:48:01 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "HumanB.hpp"
+#include "HumanA.hpp"
+#include "Weapon.hpp"
+
 
 int	main()
 {

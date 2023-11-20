@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 12:31:33 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/18 16:57:08 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/11/20 00:54:24 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/11/20 00:57:52 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-
-HumanB::HumanB(std::string name)
+int main(int argc, char **argv)
 {
-	this->name = name;
-	this->wp  = NULL;
-}
-
-HumanB::~HumanB()
-{}
-
-void	HumanB::setWeapon(Weapon &club)
-{
-	this->wp = &club;
-}
-
-void	HumanB::attack()
-{
-	if(this->wp)
-		std::cout << this->name << " attacks with their " << this->wp->getType() <<  std::endl;
+    Harl    harl;
+    if (argc != 2)
+    {
+        std::cout << "enter one argument"<< std::endl;
+        return (1);
+    }
+    hatl.complain(argv[1]);
+    return (0);
 }

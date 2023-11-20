@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*    Harl.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 12:31:33 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/18 16:57:08 by mel-kouc         ###   ########.fr       */
+/*   Created: 2023/11/19 17:26:42 by mel-kouc          #+#    #+#             */
+/*   Updated: 2023/11/19 20:33:48 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
-#include "Weapon.hpp"
+#ifndef	HARL_HPP
+#define HARL_HPP
 
+#include <iostream>
+#include <string>
 
-HumanB::HumanB(std::string name)
+class	Harl
 {
-	this->name = name;
-	this->wp  = NULL;
-}
+	private	:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public	:
+		Harl();
+		~Harl();
+		void complain( std::string level);
+};
 
-HumanB::~HumanB()
-{}
-
-void	HumanB::setWeapon(Weapon &club)
-{
-	this->wp = &club;
-}
-
-void	HumanB::attack()
-{
-	if(this->wp)
-		std::cout << this->name << " attacks with their " << this->wp->getType() <<  std::endl;
-}
+#endif;
