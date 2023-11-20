@@ -42,7 +42,6 @@ int main()
 		    book.Exit_contact();
 		else
 			std::cout << "the command is not found" << std::endl;
-
 	}
 	return (0);
 }
