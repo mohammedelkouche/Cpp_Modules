@@ -18,7 +18,7 @@ HEADER = Zombie.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++
 

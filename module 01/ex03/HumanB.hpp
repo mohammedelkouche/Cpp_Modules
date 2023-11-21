@@ -6,7 +6,7 @@
 /*   By: mel-kouc <mel-kouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 22:42:36 by mel-kouc          #+#    #+#             */
-/*   Updated: 2023/11/18 21:36:47 by mel-kouc         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:32:19 by mel-kouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	HumanB
 	public	:
 		HumanB(std::string name);
 		~HumanB();
-        void	setWeapon(Weapon &club);
+		void	setWeapon(Weapon &club);
 		void	attack(void);
 };
 
